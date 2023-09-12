@@ -1,0 +1,104 @@
+﻿<Window x:Class="WPFappsFromColledge.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFappsFromColledge"
+        mc:Ignorable="d"
+        Title="User`s Data" Height="450" Width="800">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400*"/>
+            <ColumnDefinition Width="400*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <DockPanel VerticalAlignment="Stretch" Height="auto" Grid.Column="0"> 
+
+            <GroupBox Header="Введите данные о себе"  Margin="10 10">
+
+                <StackPanel Orientation="Vertical" >
+
+                    <GroupBox Header="Введите имя">
+                        <TextBox Name="textName" Margin="0 3"/>
+                    </GroupBox>
+
+                    <GroupBox Header="Введите дату рождения" Height="50" Margin="0 10 0 10">
+                        <DatePicker Name="dtpBd"></DatePicker>
+                    </GroupBox>
+
+                    <GroupBox Header="Введите пол">
+                        <ListBox  Name="lstGender">
+                            <ListBoxItem Margin="0 3 0 0" Content="Мальчик"/>
+                            <ListBoxItem Margin="0 3 0 3" Content="Девочка" />
+                            <ListBoxItem Margin="0 0 0 3" Content="Иное"/>
+                        </ListBox>
+                    </GroupBox>
+
+                    <GroupBox Header="Введите дополнительную ифнормацию" Margin="0 10 0 10">
+                        <StackPanel Orientation="Vertical" Margin="0 5 0 5">
+                            <CheckBox Name="chbKind" Margin="0 3 0 0" Content="Добрый"/>
+                            <CheckBox Name="chbrRsponsive" Margin="0 3 0 3" Content="Отзывчивый"/>
+                            <CheckBox Name="chbModest" Margin="0 0 0 3" Content="Скромный"/>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <Button Name="Write" Content="Записать" MaxWidth="80" Click="Write_Click" />
+
+                </StackPanel>
+
+
+            </GroupBox>
+
+        </DockPanel>
+
+
+        <DockPanel Grid.Column="1" Height="auto">
+
+            <StackPanel Orientation="Vertical">
+
+                <GroupBox Header="Считывание информации" Margin="10">
+
+                    <StackPanel Orientation="Vertical" Margin="10">
+
+                        <GroupBox Header="Имя">
+                            <TextBlock Name="txtBlcName"/>
+                        </GroupBox>
+
+                        <GroupBox Header="Дата Рождения">
+                            <TextBlock Name="txtBlcBd"/>
+                        </GroupBox>
+
+                        <GroupBox Header="Пол">
+                            <TextBlock Name="txtBlcGender" />
+                        </GroupBox>
+
+                        <GroupBox Header="Дополнительная информация">
+                            <TextBlock Name="txtBlcDopInfo" MinHeight="90" />
+                        </GroupBox>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                            <Button Name="Read" Content="Прочитать" Margin="0 10 10 10" Click="Read_Click"/>
+                            <Button Name="nextPerson" Content="Следующий" Margin="0 10" Click="nextPerson_Click"/>
+
+                        </StackPanel>
+                        
+                    </StackPanel>
+                    
+                    
+                </GroupBox>
+                
+                
+                
+            </StackPanel>
+            
+        </DockPanel>
+    
+    </Grid>
+
+
+
+
+</Window>
